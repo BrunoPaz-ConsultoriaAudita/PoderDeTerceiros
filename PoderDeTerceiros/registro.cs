@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace PoderDeTerceiros
 {
-	class registro
+	class Registro
 	{
 		public int id { get; set; }
-		public int est { get; set; }
-		public int emit { get; set; }
+		public string est { get; set; }
+		public string emit { get; set; }
 		public string item { get; set; }
 		public DateTime dtMovto { get; set; }
-		public int seq { get; set; }
-		public int ser { get; set; }
+		public string seq { get; set; }
+		public string ser { get; set; }
 		public string num { get; set; }
 		public string natur { get; set; }
 		public double qtd { get; set; }
@@ -24,7 +24,14 @@ namespace PoderDeTerceiros
 
 		public override string ToString()
 		{
-			string str = est + "|" + emit + "|" + item + "|" + dtMovto + "|" + seq + "|" + ser + "|" + num + "|" + natur + "|" + qtd + "|" + valor + "|" + mens;
+			string str = est + "|" + emit + "|" + item + "|" + dtMovto + "|" + seq + "|" + ser + "|" + num + "|" + natur + "|" + qtd + "|" + saldo + "|" + valor + "|" + mens;
+			return str;
+		}
+
+		public string insertValues(int cont)
+		{
+			string str;
+			str = "(" + cont + ",'" + est + "','" + emit + "','" + item + "','" + dtMovto.Year + "-" + dtMovto.Month+"-"+dtMovto.Day + "','" + seq + "','" + ser + "','" + num + "','" + natur + "','" + qtd + "','" + saldo + "','" + valor + "','" + mens + "')";
 			return str;
 		}
 	}
